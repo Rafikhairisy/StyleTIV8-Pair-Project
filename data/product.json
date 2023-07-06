@@ -1,0 +1,82 @@
+[
+    {
+        "productName": "T-shirt",
+        "image": "",
+        "description": "Kaosnya di beli bang",
+        "price" : 35000,
+        "stock" : 10,
+        "CategoryId": 1
+    },
+    {
+        "productName": "Hoodie",
+        "image": "",
+        "description": "Jaketnya Bang",
+        "price" : 40000,
+        "stock" : 5,
+        "CategoryId": 1
+    },
+    {
+        "productName": "Jeans",
+        "image": "",
+        "description": "Celana birunya bang",
+        "price" : 65000,
+        "stock" : 15,
+        "CategoryId": 2
+    },
+    {
+        "productName": "Chino",
+        "image": "",
+        "description": "Chinonya bang",
+        "price" : 50000,
+        "stock" : 13,
+        "CategoryId": 2
+    },
+    {
+        "productName": "Sarung Polos",
+        "image": "",
+        "description": "Sarung motif polos beraroma arab asli",
+        "price" : 90000,
+        "stock" : 10,
+        "CategoryId": 3
+    },
+    {
+        "productName": "Sarung Motif",
+        "image": "",
+        "description": "Sarung bermotif, berbahan lembut, cocok untuk kamu",
+        "price" : 100000,
+        "stock" : 14,
+        "CategoryId": 3
+    },
+    {
+        "productName": "Daster Polos",
+        "image": "",
+        "description": "Daster polos transparan buat tidur yang berkualitas",
+        "price" : 150000,
+        "stock" : 3,
+        "CategoryId": 4
+    },
+    {
+        "productName": "Daster Motif",
+        "image": "",
+        "description": "Daster andalan emak-emak",
+        "price" : 125000,
+        "stock" : 12,
+        "CategoryId": 4
+    },
+    {
+        "productName": "Pajamas Pria",
+        "image": "",
+        "description": "Baju tidurnya orang kaya",
+        "price" : 500000,
+        "stock" : 9999,
+        "CategoryId": 5
+    },
+    {
+        "productName": "Pajamas Wanita",
+        "image": "",
+        "description": "Sama tapi buat cewek",
+        "price" : 650000,
+        "stock" : 10,
+        "CategoryId": 5
+    }
+]
