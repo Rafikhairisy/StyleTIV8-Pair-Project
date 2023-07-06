@@ -21,7 +21,7 @@
                     <a class="nav-link active" aria-current="page" href="#">All Products</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Category</a>
+                    <a class="nav-link" href="#">Categories</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -45,8 +45,29 @@
         </div>
     </div>
 </nav>
+
 <body>
     <h1>Styletiv8</h1>
+    <% dataProduct.forEach((el)=>{ %>
+
+        <div class="">
+            <div class="card" style="width: 18rem;">
+                <img src="<%= el.image %>" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <%= el.productName %>
+                    </h5>
+                    <p class="card-text">
+                        <%= el.description %>
+                    </p>
+                    <p class="card-price">
+                        <%= el.price %>
+                    </p>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        <% }) %>
 </body>
 
 </html>
