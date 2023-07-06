@@ -3,6 +3,10 @@ const router = express()
 const Controller = require('../controllers/controller')
 const UserController = require('../controllers/UserController')
 
+router.get('/', (req, res) => {
+   res.render('landingPage') 
+})
+
 router.get('/register', UserController.registerForm)
 router.post('/register', UserController.registerFormPost)
 router.get('/login', UserController.loginForm)
@@ -18,8 +22,10 @@ router.use(function (req, res, next) {
     }
 })
 
-router.get('/home', (req, res) => {
-    res.render('home')
-})
+
+router.get('/home', Controller.showHome)
+router.get('/homeadmin', Controller.showHomeAdmin)
+router.get('/cart', Controller.showCart)
+router.get('/stock', Controller.showStock)
 
 module.exports = router
