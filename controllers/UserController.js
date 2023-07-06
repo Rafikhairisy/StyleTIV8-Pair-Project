@@ -1,5 +1,6 @@
 const { User, Product, Category } = require('../models')
 const formatRupiah = require('../helpers/formatRupiah')
+const {Op} = require('sequelize')
 
 class UserController {
 
@@ -26,23 +27,41 @@ class UserController {
     }
 
     static showHome(req, res) {
-        const result = {}
-
-        Product.findAll()
+        const result = {};
+        const { searchProduct } = req.query;
+        const option = {
+            include: Category
+        };
+        
+        if (searchProduct) {
+            option.where = {
+                [Op.or]: [
+                    {
+                        productName: {
+                            [Op.iLike]: `%${searchProduct}%`
+                        }
+                    },
+                    {
+                        '$Category.categoryName$': {
+                            [Op.iLike]: `%${searchProduct}%`
+                        }
+                    }
+                ]
+            };
+        }
+        
+        Product.findAll(option)
             .then((dataProduct) => {
-                // res.send(dataProduct)
                 dataProduct.forEach((el) => {
-                    result.price = formatRupiah(el.price)
-                })
-                return dataProduct
-            })
-            .then((dataProduct) => {
-                result.dataProduct = dataProduct
-                res.render('homeuser', result)
+                    el.price = formatRupiah(el.price);
+                });
+                
+                result.dataProduct = dataProduct;
+                res.render('homeuser', result);
             })
             .catch((err) => {
-                res.send(err)
-            })
+                res.send(err);
+            });
     }
     static showHomeAdmin(req, res) {
         const result = {}
@@ -64,17 +83,17 @@ class UserController {
             })
     }
 
-    static showCart(req, res){
+    static showCart(req, res) {
         res.render('cart')
     }
-    static showStock(req, res){
+    static showStock(req, res) {
         Product.findAll()
-        .then((dataProduct)=>{
-            res.render('stock', {dataProduct})
-        })
-        .catch((err)=>{
-            res.send(err)
-        })
+            .then((dataProduct) => {
+                res.render('stock', { dataProduct })
+            })
+            .catch((err) => {
+                res.send(err)
+            })
     }
 
 }

@@ -58,8 +58,8 @@
                 </li>
             </ul>
             <a href="/cart"><button><i class="fa fa-shopping-cart"></i></button></a>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <form class="d-flex" role="search" action="/homeuser" method="get">
+                <input class="form-control me-2" type="search" name="searchProduct" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
         </div>
@@ -68,6 +68,12 @@
 
 <body>
     <h1>Styletiv8</h1>
+    <a href="/homeuser"><button>All</button></a>
+    <a href="/homeuser?CategoryId=1"><button name="CategoryId" value="1">Baju</button></a>
+    <a href="/homeuser?CategoryId=2"><button name="CategoryId" value="2">Celana</button></a>
+    <a href="/homeuser?CategoryId=3"><button name="CategoryId" value="3">Manager</button></a>
+    <a href="/homeuser?CategoryId=4"><button name="CategoryId" value="4">Daster</button></a>
+    <a href="/homeuser?CategoryId=5"><button name="CategoryId" value="5">Pajamas</button></a>
     <div class="card-container">
         <% dataProduct.forEach((el)=> { %>
             <div class="card">
