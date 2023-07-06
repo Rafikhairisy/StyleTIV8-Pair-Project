@@ -1,6 +1,6 @@
 const { User, Product, Category } = require('../models')
 const formatRupiah = require('../helpers/formatRupiah')
-const {Op} = require('sequelize')
+const { Op } = require('sequelize')
 
 class UserController {
 
@@ -27,12 +27,13 @@ class UserController {
     }
 
     static showHome(req, res) {
+        const { searchProduct, categoryName } = req.query;
         const result = {};
-        const { searchProduct } = req.query;
+    
         const option = {
             include: Category
         };
-        
+    
         if (searchProduct) {
             option.where = {
                 [Op.or]: [
@@ -48,19 +49,26 @@ class UserController {
                     }
                 ]
             };
+        } else if (categoryName) {
+            option.where = {
+                '$Category.categoryName$': {
+                    [Op.iLike]: `%${categoryName}%`
+                }
+            };
         }
-        
+    
         Product.findAll(option)
             .then((dataProduct) => {
                 dataProduct.forEach((el) => {
                     el.price = formatRupiah(el.price);
                 });
-                
+    
+                result.category = categoryName ? categoryName : 'All';
                 result.dataProduct = dataProduct;
-                res.render('homeuser', result);
+                return res.render('homeuser', result);
             })
             .catch((err) => {
-                res.send(err);
+                return res.send(err);
             });
     }
     static showHomeAdmin(req, res) {
@@ -81,6 +89,33 @@ class UserController {
             .catch((err) => {
                 res.send(err)
             })
+    }
+    static showCategory(req, res) {
+        const result = {};
+        const { categoryName } = req.query;
+        const option = {
+            include: Category,
+            where: {}
+        };
+
+        if (categoryName) {
+            option.where = {
+                '$Category.categoryName$': { [Op.iLike]: `%${categoryName}%` }
+            };
+        }
+
+        Product.findAll(option)
+            .then((dataProduct) => {
+                dataProduct.forEach((el) => {
+                    el.price = formatRupiah(el.price);
+                });
+
+                result.dataProduct = dataProduct;
+                res.render('homeuser', result);
+            })
+            .catch((err) => {
+                res.send(err);
+            });
     }
 
     static showCart(req, res) {
