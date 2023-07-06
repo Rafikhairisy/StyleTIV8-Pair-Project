@@ -24,8 +24,24 @@ router.use(function (req, res, next) {
 
 
 router.get('/home', Controller.showHome)
-router.get('/homeadmin', Controller.showHomeAdmin)
 router.get('/cart', Controller.showCart)
 router.get('/stock', Controller.showStock)
+
+
+router.use(function (req, res, next) {
+    if(req.session.role !== "admin") {
+        const error = 'You must be an Admin to view this page!'
+        res.redirect(`/login?error=${error}`)
+    } else {
+        next()
+    }
+})
+
+router.get('/homeadmin', Controller.showHomeAdmin)
+router.get('/homeadmin/viewuser', Controller.showHomeDummy)
+router.get('/edit/:id', Controller.editProduct)
+router.post('/edit/:id', Controller.editProductPost)
+router.get('/delete/:id', Controller.deleteProduct)
+
 
 module.exports = router

@@ -36,7 +36,12 @@ class UserController {
                     
                     if (isValidPassword) {
                         req.session.userId = user.id
-                        return res.redirect('/home')
+                        req.session.role = user.role
+                        if(req.session.role === "admin") {
+                            return res.redirect('/homeadmin')
+                        } else {
+                            return res.redirect('/home')
+                        }
                     } else {
                         const error = "Invalid password or username"
                         return res.redirect(`/login?error=${error}`)

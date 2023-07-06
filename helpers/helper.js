@@ -1,8 +1,9 @@
-function formatRupiah(price){
-    return new Intl.NumberFormat("id-ID", {
-        style: "currency",
-        currency: "IDR"
-      }).format(+price);
+class Helper {
+    static formatRp(data) {
+        const formatted = new Intl.NumberFormat("id-ID", {style: "currency", currency:"IDR"}).format(data)
+
+        return formatted
+    }
 }
 
-module.exports = formatRupiah
+module.exports = Helper

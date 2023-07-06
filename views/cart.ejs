@@ -37,6 +37,34 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/home">Styletiv8</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/home">All Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout" style="color: green;">Logout</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
         <h1>Cart</h1>
         <table>
@@ -51,9 +79,13 @@
                     <td>Product Name 1</td>
                     <td>
                         <div class="quantity-input">
-                            <button class="btn btn-sm btn-secondary">-</button>
-                            <input type="number" value="1">
-                            <button class="btn btn-sm btn-secondary">+</button>
+                            <div class="btn-group">
+                                <button class="btn btn-sm btn-secondary quantity-minus">-</button>
+                            </div>
+                            <input type="number" value="1" id="quantity-1">
+                            <div class="btn-group">
+                                <button class="btn btn-sm btn-secondary quantity-plus">+</button>
+                            </div>
                         </div>
                     </td>
                 </tr>
@@ -61,22 +93,17 @@
                     <td>Product Name 2</td>
                     <td>
                         <div class="quantity-input">
-                            <button class="btn btn-sm btn-secondary">-</button>
-                            <input type="number" value="2">
-                            <button class="btn btn-sm btn-secondary">+</button>
+                            <div class="btn-group">
+                                <button class="btn btn-sm btn-secondary quantity-minus">-</button>
+                            </div>
+                            <input type="number" value="2" id="quantity-2">
+                            <div class="btn-group">
+                                <button class="btn btn-sm btn-secondary quantity-plus">+</button>
+                            </div>
                         </div>
                     </td>
                 </tr>
-                <tr>
-                    <td>Product Name 3</td>
-                    <td>
-                        <div class="quantity-input">
-                            <button class="btn btn-sm btn-secondary">-</button>
-                            <input type="number" value="3">
-                            <button class="btn btn-sm btn-secondary">+</button>
-                        </div>
-                    </td>
-                </tr>
+
             </tbody>
         </table>
         <div class="text-center mt-4">
@@ -85,8 +112,27 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-p+VeFUTQKou8ixi6CNivxVBOtOp3vYYCFLvCjypjwYU5z9bRT7bwmL/sCXxf00Br"
-        crossorigin="anonymous"></script>
+        integrity="sha384-p+VeFUTQKou8ixi6CNivxVBOtOp3vYYCFLvCjypjwYU5z9bRT7bwmL/sCXxf00Br" crossorigin="anonymous">
+
+            const quantityMinusButtons = document.querySelectorAll('.quantity-minus');
+            const quantityPlusButtons = document.querySelectorAll('.quantity-plus');
+
+            quantityMinusButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const input = button.parentNode.nextElementSibling;
+                    if (input.value > 0) {
+                        input.value = parseInt(input.value) - 1;
+                    }
+                });
+            });
+
+            quantityPlusButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const input = button.parentNode.previousElementSibling;
+                    input.value = parseInt(input.value) + 1;
+                });
+            });
+        </script>
 </body>
 
 </html>
