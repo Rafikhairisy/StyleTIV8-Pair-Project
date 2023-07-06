@@ -1,4 +1,5 @@
 'use strict';
+const bcrypt = require('bcryptjs')
 const {
   Model
 } = require('sequelize');
@@ -12,16 +13,25 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       User.hasMany(models.Transaction)
-      User.belongsTo(models.UserProfile)
+      User.hasOne(models.UserProfile)
     }
   }
   User.init({
     username: DataTypes.STRING,
     password: DataTypes.STRING,
     role: DataTypes.STRING
-  }, {
+  },
+  {
     sequelize,
     modelName: 'User',
-  });
+  })
+
+  User.beforeCreate((instance, options) => {
+    const salt = bcrypt.genSaltSync(8)
+    const hash = bcrypt.hashSync(instance.password, salt)
+
+    instance.password = hash
+  })
+
   return User;
 };

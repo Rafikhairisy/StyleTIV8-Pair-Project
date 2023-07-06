@@ -63,29 +63,18 @@
 <body>
     <div class="container">
         <h1>Form Registration</h1>
-        <form action="/submit-form" method="POST">
-            <label for="firstname">First Name:</label><br>
-            <input type="text" id="firstname" name="firstname" required><br><br>
+        <form action="/register" method="POST">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" required><br><br>
 
-            <label for="lastname">Last Name:</label><br>
-            <input type="text" id="lastname" name="lastname" required><br><br>
+            <label for="password">Password:</label><br>
+            <input type="text" id="password" name="password" required><br><br>
 
-            <label for="lastname">Phone Number:</label><br>
-            <input type="text" id="phoneNumber" name="phoneNumber" required><br><br>
-
-            <label for="lastname">Address:</label><br>
-            <input type="text" id="address" name="address" required><br><br>
-
-            <label for="lastname">Email:</label><br>
-            <input type="text" id="email" name="email" required><br><br>
-
-            <label for="payment">Payment method:</label><br>
-            <select class="nav-item dropdown nav-link dropdown-toggle" type="text" id="payment" name="payment" required>
+            <label for="role">Role:</label><br>
+            <select class="nav-item dropdown nav-link dropdown-toggle" type="text" id="role" name="role" required>
                 <option value="">Choose one</option>
-                <option value="credit">Credit Card</option>
-                <option value="debit">Debit Card</option>
-                <option value="bank">Transfer Bank</option>
-                <option value="paypal">PayPal</option>
+                <option value="admin">Admin</option>
+                <option value="consumer">Consumer</option>
             </select><br><br>
             <input type="submit" value="Register">
     </div>
