@@ -1,82 +1,82 @@
 [
     {
         "productName": "T-shirt",
-        "image": "",
+        "image": "https://image.uniqlo.com/UQ/ST3/AsianCommon/imagesgoods/422992/sub/goods_422992_sub14.jpg?width=494",
         "description": "Kaosnya di beli bang",
-        "price" : 35000,
-        "stock" : 10,
+        "price": 35000,
+        "stock": 10,
         "CategoryId": 1
     },
     {
         "productName": "Hoodie",
-        "image": "",
+        "image": "https://huckberry.imgix.net/spree/products/575329/original/46vDz9hflC_flint-and-tinder_10-year_pullover_gifts_0_original.jpg?auto=format%2C%20compress&crop=top&fit=clip&cs=tinysrgb&ixlib=react-9.5.2",
         "description": "Jaketnya Bang",
-        "price" : 40000,
-        "stock" : 5,
+        "price": 40000,
+        "stock": 5,
         "CategoryId": 1
     },
     {
         "productName": "Jeans",
-        "image": "",
+        "image": "https://media.gq.com/photos/62ebe674b1e4d2197b84e69b/master/w_1280%2Cc_limit/Layer_5.jpg",
         "description": "Celana birunya bang",
-        "price" : 65000,
-        "stock" : 15,
+        "price": 65000,
+        "stock": 15,
         "CategoryId": 2
     },
     {
         "productName": "Chino",
-        "image": "",
+        "image": "https://img.my-best.id/product_images/56c503d1646b288ac834350d20cb1e5d.jpg?ixlib=rails-4.3.1&q=70&lossless=0&w=800&h=800&fit=clip&s=bc7743f6269e660ec3f92dac2982c55e",
         "description": "Chinonya bang",
-        "price" : 50000,
-        "stock" : 13,
+        "price": 50000,
+        "stock": 13,
         "CategoryId": 2
     },
     {
         "productName": "Sarung Polos",
-        "image": "",
+        "image": "https://laz-img-sg.alicdn.com/p/60b15b1a44bebbbe1ebb2c6e6d6ee5af.jpg",
         "description": "Sarung motif polos beraroma arab asli",
-        "price" : 90000,
-        "stock" : 10,
+        "price": 90000,
+        "stock": 10,
         "CategoryId": 3
     },
     {
         "productName": "Sarung Motif",
-        "image": "",
+        "image": "https://1.bp.blogspot.com/-pmn4KO7jL1k/YBbbZNydFAI/AAAAAAAAL3c/ih-8r7QSbOo12qv-HDjfLcLtF_2zYZR1wCLcBGAsYHQ/s640/sarung-batik-nu-motif-kawung.jpeg",
         "description": "Sarung bermotif, berbahan lembut, cocok untuk kamu",
-        "price" : 100000,
-        "stock" : 14,
+        "price": 100000,
+        "stock": 14,
         "CategoryId": 3
     },
     {
         "productName": "Daster Polos",
-        "image": "",
+        "image": "https://cf.shopee.co.id/file/fde92dd241fe118ba783d8ba28f2efff",
         "description": "Daster polos transparan buat tidur yang berkualitas",
-        "price" : 150000,
-        "stock" : 3,
+        "price": 150000,
+        "stock": 3,
         "CategoryId": 4
     },
     {
         "productName": "Daster Motif",
-        "image": "",
+        "image": "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//102/MTA-27442767/oem_daster_motif_corak-_daster_adem_murah-_fashion_wanita_full06_hvr93aty.jpg",
         "description": "Daster andalan emak-emak",
-        "price" : 125000,
-        "stock" : 12,
+        "price": 125000,
+        "stock": 12,
         "CategoryId": 4
     },
     {
         "productName": "Pajamas Pria",
-        "image": "",
+        "image": "https://img.my-best.id/product_images/8ded495d919f0c281153dae32e46e145.jpeg?ixlib=rails-4.3.1&q=70&lossless=0&w=800&h=800&fit=clip&s=dbdb657352631950938c290e547bd4e0",
         "description": "Baju tidurnya orang kaya",
-        "price" : 500000,
-        "stock" : 9999,
+        "price": 500000,
+        "stock": 9999,
         "CategoryId": 5
     },
     {
         "productName": "Pajamas Wanita",
-        "image": "",
+        "image": "https://media.karousell.com/media/photos/products/2022/5/30/baju_tidur_piyama_wanitacewek__1653924320_dc4de617.jpg",
         "description": "Sama tapi buat cewek",
-        "price" : 650000,
-        "stock" : 10,
+        "price": 650000,
+        "stock": 10,
         "CategoryId": 5
     }
 ]
