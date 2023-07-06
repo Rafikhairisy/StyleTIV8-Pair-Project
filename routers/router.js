@@ -26,6 +26,8 @@ router.use(function (req, res, next) {
 router.get('/home', Controller.showHome)
 router.get('/cart', Controller.showCart)
 router.get('/stock', Controller.showStock)
+router.get('/home/profile/:id', Controller.addProfile)
+router.post('/home/profile/:id', Controller.addProfilePost)
 
 
 router.use(function (req, res, next) {
@@ -39,6 +41,8 @@ router.use(function (req, res, next) {
 
 router.get('/homeadmin', Controller.showHomeAdmin)
 router.get('/homeadmin/viewuser', Controller.showHomeDummy)
+router.get('/homeadmin/add', Controller.addProduct)
+router.post('/homeadmin/add', Controller.addProductPost)
 router.get('/edit/:id', Controller.editProduct)
 router.post('/edit/:id', Controller.editProductPost)
 router.get('/delete/:id', Controller.deleteProduct)

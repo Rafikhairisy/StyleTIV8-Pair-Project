@@ -28,7 +28,7 @@
 </head>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/home">Styletiv8</a>
+        <a class="navbar-brand mb-2" href="/home">Styletiv8</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -45,14 +45,14 @@
                     <a class="nav-link" href="/logout" style="color: green;">Logout</a>
                 </li>
             </ul>
-            <a href="/cart"><button><i class="fa fa-shopping-cart"></i></button></a>
+            <a href="/cart"><button class="me-2"><i class="fa fa-bars">Transaction List</i></button></a>
+            <a href="/home/profile/<%= id %>"><button class="me-2"><i class="fa fa-bars">Your Profile</i></button></a>
             <form class="d-flex" role="search" action="/home" method="GET">
                 <input class="form-control me-2" type="search" name="searchProduct" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
-            
         </div>
-    </div>
+    </div> 
 </nav>
 
 <body>
